@@ -1,5 +1,4 @@
-// src/index.js o src/main.jsx
-import React from 'react';
+import './index.css'; // Importa el archivo CSS
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
