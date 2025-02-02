@@ -122,7 +122,7 @@ app.post('/users/', async (req, res) => {
 });
 
 // Ruta para editar un usuario por ID
-app.post('/users/:id', async (req, res) => {
+app.put('/users/:id', async (req, res) => {
     const { id } = req.params; // Obtener el ID del usuario desde la URL
     const { nombre, apellido, correo, cedula, finca, telefono } = req.body;
 
@@ -161,8 +161,11 @@ app.get('/users/search', async (req, res) => {
     // Crear un objeto de búsqueda
     let searchCriteria = {};
 
-    // Verificar si el término es solo números (asumiendo que es una cédula)
-    if (/^\d+$/.test(term)) {
+    // Verificar si el término es un ObjectId válido (ID)
+    if (mongoose.Types.ObjectId.isValid(term)) {
+        searchCriteria._id = term; // Búsqueda exacta por ID
+    } else if (/^\d+$/.test(term)) {
+        // Si el término es solo números, asumir que es una cédula
         searchCriteria.cedula = term; // Búsqueda exacta por cédula
     } else if (/\S+@\S+\.\S+/.test(term)) {
         // Si el término parece ser un correo electrónico

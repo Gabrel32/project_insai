@@ -41,7 +41,7 @@ export default function Form({ fields, onSubmit, buttonText = "Enviar", styleFor
                     </label>
                 </div>
             ))}
-            <button type="submit" className="submit-button">
+            <button type="submit" className="submit-button EfectButton">
                 {buttonText}
             </button>
         </form>

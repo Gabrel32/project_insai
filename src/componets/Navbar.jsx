@@ -4,7 +4,7 @@ export default function Navbar() {
     <>
     <div className="contentNavBar">
     <div className="content">
-        <h1>Gestor administrativo de ganado animal</h1>
+        <h1>Gestor Administrativo de Ganado Animal</h1>
         </div>
     </div>
     </>
