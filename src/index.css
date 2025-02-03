@@ -287,8 +287,6 @@ form .input-container {
 }
 /* Contenedor principal */
 .search-bar-container {
-    max-width: 400px;
-    margin: 0 auto;
     padding: 20px;
     width: 100%;
   }
@@ -310,6 +308,7 @@ form .input-container {
     border-radius: 4px;
     outline: none;
     background: rgba(245, 245, 245, 0.926) !important;
+    max-width: 400px;
   }
   
   .input-label {
@@ -334,6 +333,11 @@ form .input-container {
   
   /* Estilos para la lista de resultados */
   .results-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
     list-style: none;
     padding: 0;
     margin-top: 20px;
@@ -372,6 +376,7 @@ form .input-container {
   
   .load-more-button:hover {
     background-color: #0056b3;
+    color: white;
   }
 
   .no-results-message{
